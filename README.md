@@ -1,1 +1,40 @@
-# city-explorer-api
+# City Explorer API
+
+**Author**: Ian Cargill\
+**Version**: 1.0.0
+
+## Overview
+
+Serves as a weather data API for the city explorer app.
+
+## Getting Started
+
+<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+
+## Architecture
+
+- express.js
+- dotenv
+- cors
+
+## Change Log
+
+10-9-2021 12:30pm Project initialized.
+
+## Credit and Collaborations
+
+I would like to thank the internet.
+
+### Time Estimates
+
+Name of feature:\
+Estimate of time needed to complete:\
+Start time:\
+Finish time:\
+Actual time needed to complete:
+
+<!-- Name of feature:
+Estimate of time needed to complete:
+Start time:
+Finish time:
+Actual time needed to complete: -->
