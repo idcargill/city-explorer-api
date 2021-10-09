@@ -27,11 +27,19 @@ I would like to thank the internet.
 
 ### Time Estimates
 
-Name of feature:\
-Estimate of time needed to complete:\
-Start time:\
-Finish time:\
-Actual time needed to complete:
+#### API Data Response
+
+Estimate of time needed to complete: 1 hour\
+Start time: 1:30pm\
+Finish time: 2:30pm\
+Actual time needed to complete: 1 hour
+
+#### Front End Weather Display
+
+Estimate of time needed to complete: 1 hour\
+Start time: 3:00pm\
+Finish time: 4:30pm\
+Actual time needed to complete: 1.5 hours
 
 <!-- Name of feature:
 Estimate of time needed to complete:
