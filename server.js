@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const { handleWeather } = require('./modules/handleWeather');
-require('dotenv').config;
 
 // Express Structure
 const app = express();

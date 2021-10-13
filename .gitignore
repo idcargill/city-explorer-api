@@ -229,5 +229,9 @@ $RECYCLE.BIN/
 
 # Personal
 test*
+notes*
+
+# API Testing
+/apiTesting
 
 # End of https://www.gitignore.io/api/node,macos,linux,windows,webstorm,visualstudiocode
