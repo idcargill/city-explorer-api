@@ -8,30 +8,32 @@ const BASE = 'https://api.themoviedb.org/3/search/movie';
 const LANG = 'en';
 
 // Takes in a search string (CITY NAME)
-const searchMoviesApi = async (req, res) => {
+const getMoviesApi = async (req, res) => {
   try {
-    const queryString = req.query.seachQuery;
+    const queryString = req.query.searchQuery;
+    console.log(req.query.searchQuery);
     const movieApiUrl = `${BASE}?api_key=${KEY}&language=${LANG}-US&page=1&include_adult=false&query=${queryString}`;
     const movies = await axios.get(movieApiUrl);
-
     const movieDataArr = movies.data.results;
 
     // Sort list by Popularity
-    movieDataArr.sort((a, b) => {
-      if (a.popularity > b.popularity) {
-        return 1;
-      } else if (a.popularity < b.popularity) {
-        return -1;
-      } else {
-        return 0;
-      }
-    });
-    const movieList = movieDataArr.map((movieData) => new Movie(movieData));
+    // movieDataArr.sort((a, b) => {
+    //   if (a.popularity > b.popularity) {
+    //     return 1;
+    //   } else if (a.popularity < b.popularity) {
+    //     return -1;
+    //   } else {
+    //     return 0;
+    //   }
+    // });
+    // console.log(movies);
 
-    if (!movieDataArr) {
-      res.status(404).send('We aint find nothin');
-      throw new Error('No movie data found');
-    }
+    console.log('Number of movies returned: ', movieDataArr.length);
+    // Array of movie Objects
+    const movieList = movieDataArr.map((movieData) => new Movie(movieData));
+    console.log(movieList);
+
+    // console.log(movieList);
     res.status(200).send(movieList);
   } catch (e) {
     console.log(e.message);
@@ -39,4 +41,4 @@ const searchMoviesApi = async (req, res) => {
   }
 };
 
-module.exports = { searchMoviesApi };
+module.exports = { getMoviesApi };

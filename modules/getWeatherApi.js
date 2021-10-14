@@ -13,15 +13,14 @@ const getWeatherApi = async (req, res) => {
   try {
     const weatherApiUrl = `${BASE}?lat=${lat}&lon=${lon}&key=${KEY}&include=alerts&units=${UNITS}&lang=${LANG}`;
     const weatherData = await axios.get(weatherApiUrl);
-    // return weatherData;
 
     // Sort Weather Data Desc
     let results = weatherData.data.data;
     results.sort((a, b) => {
       if (a.datetime > b.datetime) {
-        return -1;
-      } else if (a.datetime < b.datetime) {
         return 1;
+      } else if (a.datetime < b.datetime) {
+        return -1;
       } else {
         return 0;
       }
@@ -29,9 +28,6 @@ const getWeatherApi = async (req, res) => {
 
     const foreCastArr = results.map((day) => new Forecast(day));
 
-    if (!results) {
-      throw new Error('No Weather Data Found');
-    }
     res.status(200).send(foreCastArr);
   } catch (e) {
     console.log(e);

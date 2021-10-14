@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 app.get('/weather', (req, res) => getWeatherApi(req, res));
 
 // API - Movies
-app.get('/movies', (req, res) => getMoviesApi(req, res));
+app.get('/movie', (req, res) => getMoviesApi(req, res));
 
 // ERROR 404
 app.get('*', (req, res) => {
