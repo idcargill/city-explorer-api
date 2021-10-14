@@ -5,11 +5,12 @@
 
 ## Overview
 
-Serves as a weather data API for the city explorer app.
+An api backend for the City-Explorer app. Processes api request for movie and weather information.
 
 ## Getting Started
 
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+npm run server\
+Will acitvate your server for testing.
 
 ## Architecture
 
@@ -17,9 +18,12 @@ Serves as a weather data API for the city explorer app.
 - dotenv
 - cors
 
+The backend API is built with an express server.
+
 ## Change Log
 
-10-9-2021 4:30pm Weather Forcast returned to client - client side display
+12-13-2020 11:00pm Movie information is displayed on client/ hosted on Heroku and Netlify\
+10-9-2021 4:30pm Weather Forcast returned to client - client side display\
 10-9-2021 12:30pm Project initialized.
 
 ## Credit and Collaborations
@@ -48,6 +52,13 @@ Estimate of time needed to complete: 1 hour\
 Start time: 4:35pm\
 Finish time: 4:50pm\
 Actual time needed to complete: 25 min
+
+#### Movie Data Display
+
+Estimate of time needed to complete: 1 hour\
+Start time: 7:00pm\
+Finish time: 9:00pm\
+Actual time needed to complete: 2 hours
 
 <!-- Name of feature:
 Estimate of time needed to complete:
