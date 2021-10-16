@@ -16,18 +16,6 @@ const getMoviesApi = async (req, res) => {
     const movies = await axios.get(movieApiUrl);
     const movieDataArr = movies.data.results;
 
-    // Sort list by Popularity
-    // movieDataArr.sort((a, b) => {
-    //   if (a.popularity > b.popularity) {
-    //     return 1;
-    //   } else if (a.popularity < b.popularity) {
-    //     return -1;
-    //   } else {
-    //     return 0;
-    //   }
-    // });
-    // console.log(movies);
-
     console.log('Number of movies returned: ', movieDataArr.length);
     // Array of movie Objects
     const movieList = movieDataArr.map((movieData) => new Movie(movieData));
