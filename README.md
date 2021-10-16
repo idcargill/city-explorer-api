@@ -16,13 +16,17 @@ Will acitvate your server for testing.
 
 - express.js
 - dotenv
-- cors
+
+<img src="city-explorer-api.png"
+     alt="App Diagram"
+     style="margin-right: 10px;" />
 
 The backend API is built with an express server.
 
 ## Change Log
 
-12-13-2020 11:00pm Movie information is displayed on client/ hosted on Heroku and Netlify\
+10-15-2020 7:00pm Refactor components
+10-13-2020 11:00pm Movie information is displayed on client/ hosted on Heroku and Netlify\
 10-9-2021 4:30pm Weather Forcast returned to client - client side display\
 10-9-2021 12:30pm Project initialized.
 
@@ -59,6 +63,13 @@ Estimate of time needed to complete: 1 hour\
 Start time: 7:00pm\
 Finish time: 9:00pm\
 Actual time needed to complete: 2 hours
+
+#### Refactor
+
+Estimate of time needed to complete: 30 minutes
+Start time: 6:30pm
+Finish time: 6:50pm
+Actual time needed to complete: 20 minutes
 
 <!-- Name of feature:
 Estimate of time needed to complete:
