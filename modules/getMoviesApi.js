@@ -31,10 +31,10 @@ const getMoviesApi = async (req, res) => {
 
       // Array of movie Objects
       const movieList = movieDataArr.map((movieData) => new Movie(movieData));
-
+      console.log('movies to send:', movieList);
       // Set movie obj to cache
       cache[key].movies = movieList;
-      res.status(200).send(movieList);
+      res.status(200).send(cache[key]);
     } catch (e) {
       console.log(e.message);
       res

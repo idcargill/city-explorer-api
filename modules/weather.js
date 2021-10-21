@@ -14,7 +14,7 @@ class Weather {
 async function getWeather(latitude, longitude) {
   const key = 'weather-' + latitude + longitude;
   const url = `http://api.weatherbit.io/v2.0/forecast/daily/?key=${process.env.WEATHER_API_KEY}&lang=en&lat=${latitude}&lon=${longitude}&days=5`;
-
+  // console.log('cache key: ', key);
   // Weather data cached for 5 minutes
   if (cache[key] && Date.now() - cache[key].timestamp < 1000 * 60 * 5) {
     console.log('Cache hit');
@@ -26,6 +26,7 @@ async function getWeather(latitude, longitude) {
     await axios.get(url).then((response) => {
       parseWeather(response.data).then((data) => (cache[key].data = data));
     });
+    // console.log(cache[key]);
     return cache[key];
   }
 }

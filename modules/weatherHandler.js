@@ -1,9 +1,9 @@
 const weather = require('./weather');
 
 function weatherHandler(request, response) {
-  console.log(request.query);
   const { lat, lon } = request.query;
   weather(lat, lon)
+    // .then((summaries) => console.log('data to send ', summaries))
     .then((summaries) => response.send(summaries))
     .catch((error) => {
       console.error(error);
