@@ -1,25 +1,32 @@
-'use strict';
-
 const express = require('express');
 const cors = require('cors');
-const weather = require('./modules/weather.js');
+const path = require('path');
+// const { getWeatherApi } = require('./modules/getWeatherApi');
+const { getMoviesApi } = require('./modules/getMoviesApi');
+const weatherHandler = require('./modules/weatherHandler');
 
-require('dotenv').config();
+// Express Structure
 const app = express();
 app.use(cors());
 
-app.get('/weather', weatherHandler);
+// Port set env or default
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
+});
 
-function weatherHandler(request, response) {
-  const { lat, lon } = request.query;
-  weather(lat, lon)
-    .then((summaries) => response.send(summaries))
-    .catch((error) => {
-      console.error(error);
-      response.status(200).send('Sorry. Something went wrong!');
-    });
-}
+// Home/Root
+app.get('/', (req, res) => {
+  res.status(200).sendFile(path.join(__dirname, '/pages/weatherHome.html'));
+});
 
-app.listen(process.env.PORT, () =>
-  console.log(`Server up on ${process.env.PORT}`)
-);
+// API - Weather
+app.get('/weather', (req, res) => weatherHandler(req, res));
+
+// API - Movies
+app.get('/movie', (req, res) => getMoviesApi(req, res));
+
+// ERROR 404
+app.get('*', (req, res) => {
+  res.status(500).sendFile(path.join(__dirname, './pages/error500.html'));
+});
