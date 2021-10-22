@@ -5,6 +5,10 @@
 
 ## Overview
 
+[City-Explorer-Front](https://explore-this.netlify.app)
+
+[City-Explorer-API](https://explore-this.herokuapp.com)
+
 An api backend for the City-Explorer app. Processes api request for movie and weather information.
 
 ## Getting Started
